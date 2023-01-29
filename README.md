@@ -2,7 +2,7 @@
 
 git clone
 
-cd codingweek-02
+cd NoneLedge
 
 cd flashcard 
 
