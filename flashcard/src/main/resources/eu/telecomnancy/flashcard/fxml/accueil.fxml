@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurAccueil">
+    <children>
+        <Text fill="#2e0a91" layoutX="196.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que voulez-vous faire ?" textAlignment="CENTER" wrappingWidth="399.322265625">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Text>
+        <Text fx:id="errormsg" fill="RED" layoutX="435.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="44.80000000000001" />
+
+
+        <Button id="creation" fx:id="creation" layoutX="184.0" layoutY="234.0" mnemonicParsing="false" onAction="#clicCreation" text="Mode Création" />
+        <Button id="apprentisage" fx:id="apprentissage" layoutX="467.0" layoutY="234.0" mnemonicParsing="false" onAction="#accederParametre" text="Mode Apprentissage" />
+        <Button id="editer" fx:id="editer" layoutX="36.0" layoutY="377.0" mnemonicParsing="false" onAction="#Editer" prefHeight="26.0" prefWidth="62.0" text="Editer" />
+        <Button id="creer" fx:id="creer" layoutX="35.0" layoutY="299.0" mnemonicParsing="false" onAction="#accederCreationPile" prefHeight="26.0" prefWidth="62.0" text="Créer" />
+        <Button fx:id="statistiques" layoutX="631.0" layoutY="41.0" mnemonicParsing="false" onAction="#accederStatistiques" text="Mes statistiques" />
+        <Button fx:id="importer" layoutX="35.0" layoutY="340.0" mnemonicParsing="false" onAction="#clicImporter" text="Importer" />
+        <Button fx:id="exporter" layoutX="36.0" layoutY="413.0" mnemonicParsing="false" onAction="#Exporter" text="Exporter" />
+        <Button fx:id="valide" layoutX="133.0" layoutY="340.0" mnemonicParsing="false" onAction="#importerPile" text="Choisir un fichier à importer" />
+
+      <DialogPane fx:id="dialog1" layoutX="413.0" layoutY="361.0" prefHeight="102.0" prefWidth="342.0" style="-fx-background-color: rgba(175,171,171,0.51);">
+         <opaqueInsets>
+            <Insets top="14.0" />
+         </opaqueInsets></DialogPane>
+        <Label fx:id="dialog" layoutX="421.0" layoutY="359.0" text="Exportation réalisée avec succès.">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+      <Button fx:id="validation" layoutX="669.0" layoutY="385.0" mnemonicParsing="false" onAction="#clicCreation" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #00DA00;" text="D'accord !">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ListView fx:id="vuepiles" layoutX="140.0" layoutY="353.0" onMouseClicked="#clicPileCreation" prefHeight="184.0" prefWidth="253.0" />
+      <TextField fx:id="recherche" layoutX="140.0" layoutY="320.0" />
+      <Label fx:id="labelrecherche" layoutX="140.0" layoutY="295.0" text="Sélectionnez l'onglet à exporter/éditer :" />
+      <Button fx:id="internetbutton" layoutX="38.0" layoutY="483.0" mnemonicParsing="false" onAction="#internetPage" text="Serveur" />
+      <ImageView fitHeight="331.0" fitWidth="480.0" layoutX="-45.0" layoutY="-100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1.0" layoutY="574.0" prefHeight="26.0" prefWidth="800.0" style="-fx-background-color: CFDCF0;" textAlignment="CENTER" textFill="#2e0691">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <Text fill="#2e0691" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #d521b5;" text="Application réalisée par Andréa CRIVELLI, Thibaut Cagnon, Baptiste Gheysens et Rémi Kalinowski" textAlignment="CENTER" wrappingWidth="800.0">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Text>
+         </graphic>
+      </Label>
+
+    </children>
+</AnchorPane>

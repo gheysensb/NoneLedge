@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurCarte">
+   <children>
+      <Pane fx:id="carte" layoutX="66.0" layoutY="100.0" prefHeight="297.0" prefWidth="426.0" style="-fx-border-color: black; -fx-background-color: white;">
+         <opaqueInsets>
+            <Insets bottom="14.0" left="14.0" right="101.0" top="4.0" />
+         </opaqueInsets>
+         <rotationAxis>
+            <Point3D y="1.0" />
+         </rotationAxis>
+         <children>
+            <VBox layoutX="6.0" layoutY="3.0" prefHeight="280.0" prefWidth="416.0">
+               <children>
+                  <Text fx:id="question" strokeType="OUTSIDE" strokeWidth="0.0" text="Ma question" wrappingWidth="382.0">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="image" fitHeight="200.0" fitWidth="267.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <rotationAxis>
+                  <Point3D y="1.0" />
+               </rotationAxis>
+            </VBox>
+         </children>
+      </Pane>
+      <Button fx:id="changement" layoutX="348.0" layoutY="410.0" mnemonicParsing="false" onAction="#changerAffichage" text="Voir réponse" />
+      <Label fx:id="nompile" layoutX="494.0" layoutY="29.0" text="Nom de la pile">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="connu" layoutX="182.0" layoutY="509.0" mnemonicParsing="false" onAction="#connu" style="-fx-background-color: #00cf00;" text="Je connais cette carte" />
+      <Button fx:id="arevoir" layoutX="348.0" layoutY="509.0" mnemonicParsing="false" onAction="#arevoir" style="-fx-background-color: RED;" text="Je ne connais pas encore cette carte" />
+      <Label layoutX="38.0" layoutY="511.0" text="Auto-évaluation">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="barretemps" layoutX="112.0" layoutY="67.0" prefHeight="25.0" prefWidth="382.0" progress="0.2" style="-fx-accent: B600FF;" />
+      <Text layoutX="57.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de mots connus" />
+      <Button fx:id="precedent" layoutX="24.0" layoutY="17.0" mnemonicParsing="false" onAction="#accederAccueil">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ProgressIndicator fx:id="pourcentagemotconnus" layoutX="193.0" layoutY="415.0" progress="0.0" />
+      <Text layoutX="499.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" wrappingWidth="69.185546875" />
+      <Text fx:id="descriptioncontent" layoutX="576.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="167.13671875" />
+   </children>
+</Pane>

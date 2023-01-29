@@ -1,0 +1,25 @@
+############################ LISTE DES FONCTIONNNALITES ############################
+
+I ] Fonctionnalités de base
+
+- Création d'une pile de carte ( nom , description )
+- Modification d'une pile de carte ( ajout , suppression , modification )
+- Création d'une carte ( question , réponse )
+- Suppression d'une carte d'une pile
+- Suppression d'une pile de carte 
+- Mode apprentissage ( temps, ordre ) 
+- Paramètrage du mode apprentissage ( nombre de carte , nombre de répétition , temps )
+- Statistiques d'apprentissage (global, par pile)
+- Sauvegarde des données au format JSON 
+- Importer des piles de cartes au format JSON 
+- Exporter des piles de cartes au format JSON 
+
+II ] Fonctionnalités avancées
+
+- Importer en ligne cartes
+- Exporter en ligne cartes
+- 2 modes d'apprentissage : lire ou écrire
+- Données multimédia aux cartes ( image )
+- Barre de recherche de pile 
+- Petites animations (son et retournement d'une carte)
+- Interface graphique belle

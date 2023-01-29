@@ -1,0 +1,133 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class{
+BackgroundColor<<Modèle>> Palegreen
+BackgroundColor<<Controleur>> #FFCCCC
+BackgroundColor<<Vue>> #CCFFFF
+}
+
+class Carte <<Modèle>>{
+-String question
+-String answer
++Carte(String question, String answer)
++String getQuestion()
++String getAnswer()
++void setQuestion(String question)
++void setAnswer(String answer)
++void setId(int id)
+}
+
+class ControllerAcceuil <<Controleur>> implements Initializable{
++void initialize(URL url, ResourceBundle rb)
++void afficherChoixCreation(ActionEvent e)
++void afficherChoixAoorentissage(ActionEvent e)
++void accederCreationPile(ActionEvent e)
++void accederEditionPile(ActionEvent e)
++void menuDeroulant(ActionEvent e)
+}
+
+class ControleurCarte <<Controleur>> implements Initializable{
+-int currentCard
++void initialize(URL url, ResourceBundle rb)
++void visualiserReponse(ActionEvent e)
++void visualiserQuestion(ActionEvent e)
++void carteSuivante(ActionEvent e)
++void cartePrecedente(ActionEvent e)
+}
+
+class ControleurCreationCarte <<Controleur>> implements Initializable{
+BackgroundColor
++void initialize(URL url, ResourceBundle rb)
++void AjouterCarte()
++void refresh()
++void DeletePile()
++void Terminer()
+}
+
+interface Observateurs <<Vue>>{
++ réagir()
+}
+
+class ListPile <<Modèle>>{
+-int currentPile
++ListPile()
++void charger()
++void enregistrer()
++void addPile(Pile pile)
++void removePile(Pile pile)
++void removePile(int id)
++int getCurrentPile()
++void setCurrentPile(int currentPile)
++Pile getPile(int id)
++Pile nextPile()
++Pile previousPile()
+}
+
+class Pile <<Modèle>>{
+-String name
+-String description
+-int id
+-int currentCard
+
++Pile(String name, String description, int id)
++void addCard(Card card)
++void removeCard(Card card)
++void removeCard(int id)
++int getCurrentCard()
++void setCurrentCard(int currentCard)
++Card getCard(int id)
++Card getCard()
++Card nextCard()
++Card previousCard()
++String getName()
++String getDescription()
++void setName(String name)
++void setDescription(String description)
++int getCardCount()
++List<Card> getCards()
++int getId()
++void setId(int id)
+}
+
+class CreationView <<Vue>> implements Observateurs{
++void creationView()
++void update()
+}
+
+class ControleurCreationPile <<Controleur>> implements Initializable{
++void initialize(URL url, ResourceBundle rb)
++void creerPile(ActionEvent e)
++void accederAccueil(ActionEvent e)
+}
+
+ListView <<Vue>>
+TextField <<Vue>>
+Text <<Vue>>
+MenutButton <<Vue>>
+Button <<Vue>>
+TextArea <<Vue>>
+
+
+
+
+ControleurCreationPile --"1" Button
+ControleurCreationPile --"1" TextField
+ControleurCreationPile --"1" TextArea
+ControleurCreationCarte --"1" Pile
+ControleurCreationCarte --"1" ListPile
+
+ControleurCarte --  "4" Button
+ControleurCarte -- "1" Text
+ControleurCarte -- "1"Pile
+ControllerAcceuil -- "2" ListPile
+ControllerAcceuil --"2"MenutButton
+ControllerAcceuil --"4" Button
+ControleurCreationCarte --"*" Observateurs
+ListPile --"*" Pile
+Pile --"*" Carte
+Observateurs --"1"Pile
+CreationView --"1"ListView
+CreationView --"2"TextField
+CreationView --"1"Text
+@enduml

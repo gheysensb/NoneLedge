@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurLogin">
+   <children>
+      <TextField fx:id="codetoken" layoutX="57.0" layoutY="279.0" />
+      <Button layoutX="230.0" layoutY="279.0" mnemonicParsing="false" onAction="#Connect" text="Connexion" />
+      <TextField fx:id="urlaffich" layoutX="17.0" layoutY="162.0" prefHeight="37.0" prefWidth="566.0" />
+      <Text layoutX="57.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connectez vous sur ce lien et copiez le code dans le champ en dessous">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Button layoutX="29.0" layoutY="25.0" mnemonicParsing="false" onAction="#goAccueil">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Text layoutX="56.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Collez ici !" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurCreationPile">
+   <children>
+      <Label layoutX="29.0" layoutY="150.0" text="Nom de la pile : ">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <TextField fx:id="nompile" layoutX="178.0" layoutY="146.0" prefHeight="22.0" prefWidth="310.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="29.0" layoutY="232.0" text="Description de la pile : ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descriptionpile" layoutX="178.0" layoutY="232.0" prefHeight="101.0" prefWidth="522.0" />
+      <Button fx:id="creer" layoutX="638.0" layoutY="393.0" mnemonicParsing="false" onAction="#creerPile" text="Créer la pile">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text fill="#2e0a91" layoutX="178.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Création d'une nouvelle pile" textAlignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <Button fx:id="precedent" layoutX="42.0" layoutY="38.0" mnemonicParsing="false" onAction="#accederAccueil">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurStatistiques">
+    <children>
+        <Text fill="#2e0a91" layoutX="126.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mes statistiques :" textAlignment="CENTER">
+            <font>
+                <Font size="38.0" />
+            </font>
+        </Text>
+      <Button id="precedent" fx:id="precedent" layoutX="24.0" layoutY="29.0" mnemonicParsing="false" onAction="#accederAccueil">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="global" layoutX="447.0" layoutY="106.0" mnemonicParsing="false" onAction="#afficherStatGlobal" text="Statistiques globales" />
+      <MenuButton fx:id="listeIndiv" layoutX="447.0" layoutY="143.0" mnemonicParsing="false" text="Statistiques par pile">
+        <items>
+
+        </items>
+      </MenuButton>
+      <StackedBarChart fx:id="graphGlobal" layoutX="136.0" layoutY="186.0" prefHeight="382.0" prefWidth="500.0" stylesheets="@../style.css">
+        <xAxis>
+          <CategoryAxis animated="false" side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />git pu
+        </yAxis>
+      </StackedBarChart>
+      <PieChart fx:id="graphIndiv" layoutX="143.0" layoutY="186.0" stylesheets="@../style.css" />
+      <DialogPane fx:id="dialog1" layoutX="215.0" layoutY="257.0" prefHeight="102.0" prefWidth="342.0" style="-fx-background-color: rgba(175,171,171,0.51);">
+         <opaqueInsets>
+            <Insets top="14.0" />
+         </opaqueInsets>
+      </DialogPane>
+      <Label fx:id="dialog" layoutX="223.0" layoutY="255.0" text="Le fichier piles.json est malformé.">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="validation" layoutX="471.0" layoutY="281.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #00DA00;" text="D'accord !">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurEcrire">
+    <children>
+        <Button fx:id="changement" layoutX="642.0" layoutY="395.0" mnemonicParsing="false" onAction="#changerAffichage" text="Voir réponse" />
+        <Label fx:id="nompile" layoutX="585.0" layoutY="33.0" text="Nom de la pile">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <ProgressBar fx:id="barretemps" layoutX="209.0" layoutY="122.0" prefHeight="25.0" prefWidth="382.0" progress="0.2" style="-fx-accent: B600FF;" />
+        <Text layoutX="15.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de mots connus :" />
+        <Button fx:id="precedent" layoutX="12.0" layoutY="14.0" mnemonicParsing="false" onAction="#accederAccueil">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+        <ProgressIndicator fx:id="pourcentagemotconnus" layoutX="45.0" layoutY="271.0" prefHeight="49.0" prefWidth="55.0" progress="0.0" />
+      <TextField fx:id="reponsetext" layoutX="209.0" layoutY="480.0" prefHeight="49.0" prefWidth="382.0" promptText="La première lettre de la réponse doit être en majuscule." />
+      <Button fx:id="checkButton" layoutX="629.0" layoutY="480.0" mnemonicParsing="false" onAction="#check" prefHeight="49.0" prefWidth="125.0" text="Vérifier" />
+      <Button fx:id="victoire" layoutX="702.0" layoutY="330.0" mnemonicParsing="false" onAction="#victoryNext" text="Suivant" />
+        <Button fx:id="defaite" layoutX="702.0" layoutY="330.0" mnemonicParsing="false" onAction="#looseNext" text="Suivant" />
+        <Text fx:id="msgvictoire" layoutX="691.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <MediaView fx:id="sonjoueur" fitHeight="200.0" fitWidth="200.0" layoutX="24.0" layoutY="55.0" />
+      <Text layoutX="588.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" />
+      <Text fx:id="descriptioncontent" layoutX="663.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="113.727294921875" />
+      <Pane fx:id="carte" layoutX="182.0" layoutY="163.0" prefHeight="297.0" prefWidth="426.0" style="-fx-border-color: black; -fx-background-color: white;">
+         <opaqueInsets>
+            <Insets bottom="14.0" left="14.0" right="101.0" top="4.0" />
+         </opaqueInsets>
+         <children>
+            <VBox layoutX="6.0" layoutY="3.0" prefHeight="280.0" prefWidth="416.0">
+               <children>
+                  <Text fx:id="question" strokeType="OUTSIDE" strokeWidth="0.0" text="Ma question" textAlignment="CENTER" wrappingWidth="382.0">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="image" fitHeight="200.0" fitWidth="267.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <rotationAxis>
+                  <Point3D y="1.0" />
+               </rotationAxis>
+            </VBox>
+         </children>
+         <rotationAxis>
+            <Point3D y="1.0" />
+         </rotationAxis>
+      </Pane>
+    </children>
+</Pane>

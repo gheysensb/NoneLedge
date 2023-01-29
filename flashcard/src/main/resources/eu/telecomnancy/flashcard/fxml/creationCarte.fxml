@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurCreationCarte">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Text fx:id="nomPile" fill="#2e0a91" layoutX="84.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de la pile" textAlignment="CENTER">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Text>
+            <Pane fx:id="cartesExistantes" layoutX="40.0" layoutY="125.0" prefHeight="429.0" prefWidth="357.0">
+               <children>
+                  <ListView fx:id="listCard" layoutX="14.0" layoutY="14.0" prefHeight="405.0" prefWidth="327.0" />
+               </children></Pane>
+            <Label layoutX="419.0" layoutY="217.0" text="Question :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="questionTexte" layoutX="459.0" layoutY="247.0" prefHeight="25.0" prefWidth="333.0" promptText="Votre question" />
+            <Label layoutX="419.0" layoutY="339.0" text="Réponse :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="reponse" layoutX="465.0" layoutY="369.0" prefHeight="55.0" prefWidth="327.0" />
+            <Text fx:id="nomPile1" layoutX="406.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle question :" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="ajoutCarte" layoutX="677.0" layoutY="435.0" mnemonicParsing="false" onAction="#ajouterCarte" text="Ajouter la carte" />
+            <Button fx:id="maj" layoutX="682.0" layoutY="33.0" mnemonicParsing="false" onAction="#refresh" text="Sauvegarder" />
+            <Button layoutX="525.0" layoutY="507.0" mnemonicParsing="false" onAction="#terminer" prefHeight="35.0" prefWidth="167.0" style="-fx-background-color: #00DA00;" text="Terminer et sauvegarder" />
+            <Button fx:id="suppression" layoutX="536.0" layoutY="33.0" mnemonicParsing="false" onAction="#confirmationSuppression" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #FFAAAA;" text="Supprimer la pile" />
+            <DialogPane fx:id="dialog1" layoutX="303.0" layoutY="72.0" prefHeight="70.0" prefWidth="360.0" style="-fx-background-color: rgba(175,171,171,0.51);" />
+            <Label fx:id="dialog2" layoutX="324.0" layoutY="83.0" text="Etes-vous sûr de vouloir supprimer cette pile ?">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="validation" layoutX="548.0" layoutY="110.0" mnemonicParsing="false" onAction="#deletePile" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: #00DA00;" text="OUI" />
+            <Button fx:id="pasvalidation" layoutX="606.0" layoutY="110.0" mnemonicParsing="false" onAction="#deletePopUp" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: #FFAAAA;" text="NON" />
+            <Button fx:id="precedent" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#accederAccueil">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/maison.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Text layoutX="58.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description : " wrappingWidth="82.15234375" />
+            <Text fx:id="contentdescription" layoutX="141.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="305.69824218750006" />
+            <TextField fx:id="questionImage" layoutX="459.0" layoutY="304.0" prefHeight="25.0" prefWidth="97.0" promptText="image.jpeg" />
+            <Label layoutX="419.0" layoutY="281.0" text="Image :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="choixImage" layoutX="583.0" layoutY="304.0" mnemonicParsing="false" onAction="#chargerImage" text="Choisir une image" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

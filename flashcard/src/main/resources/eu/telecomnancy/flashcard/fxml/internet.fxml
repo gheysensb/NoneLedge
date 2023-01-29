@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurInternet">
+   <children>
+      <Button layoutX="27.0" layoutY="22.0" mnemonicParsing="false" onAction="#goAccueil">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ListView fx:id="listinternetView" layoutX="93.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="listlocaleView" layoutX="448.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
+      <Text layoutX="129.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Importer" wrappingWidth="46.30078125" />
+      <Text layoutX="526.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exporter" />
+      <Button layoutX="340.0" layoutY="174.0" mnemonicParsing="false" onAction="#importer" text="Importer →" />
+      <Button layoutX="341.0" layoutY="234.0" mnemonicParsing="false" onAction="#exporter" text="← Exporter" />
+      <Text layoutX="139.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fichier sur le serveur" />
+      <Text layoutX="509.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fichier en local" />
+      <DialogPane fx:id="dialog1" layoutX="193.0" layoutY="189.0" prefHeight="102.0" prefWidth="342.0" style="-fx-background-color: rgba(175,171,171,0.51);">
+         <opaqueInsets>
+            <Insets top="14.0" />
+         </opaqueInsets>
+      </DialogPane>
+      <Label fx:id="dialog" layoutX="201.0" layoutY="187.0" text="Le fichier piles.json est malformé.">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="validation" layoutX="449.0" layoutY="213.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #00DA00;" text="D'accord !">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

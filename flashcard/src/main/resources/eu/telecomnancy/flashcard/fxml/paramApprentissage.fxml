@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="461.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.telecomnancy.flashcard.ControleurParametre">
+   <children>
+      <Label layoutX="178.0" layoutY="39.0" text="Paramètres d'apprentissage">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="111.0" text="Modes d'apprentissage">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="240.0" layoutY="113.0" mnemonicParsing="false" selected="true" text="Lire">
+         <toggleGroup>
+            <ToggleGroup fx:id="mode" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="329.0" layoutY="113.0" mnemonicParsing="false" text="Ecrire" toggleGroup="$mode" />
+      <Label layoutX="39.0" layoutY="170.0" text="Temps">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="423.0" layoutY="172.0" mnemonicParsing="false" text="2 min">
+         <toggleGroup>
+            <ToggleGroup fx:id="temps" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="329.0" layoutY="172.0" mnemonicParsing="false" text="1 min" toggleGroup="$temps" />
+      <RadioButton layoutX="143.0" layoutY="172.0" mnemonicParsing="false" selected="true" text="10 sec" toggleGroup="$temps" />
+      <RadioButton layoutX="240.0" layoutY="172.0" mnemonicParsing="false" text="30 sec" toggleGroup="$temps" />
+      <Label layoutX="39.0" layoutY="226.0" text="Ordre">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="143.0" layoutY="228.0" mnemonicParsing="false" selected="true" text="Classique">
+         <toggleGroup>
+            <ToggleGroup fx:id="ordre" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="240.0" layoutY="228.0" mnemonicParsing="false" text="Aléatoire" toggleGroup="$ordre" />
+
+      <Button fx:id="boutonCommencer" layoutX="262.0" layoutY="346.0" mnemonicParsing="false" onAction="#commencer" text="Commencer">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+
+      <Button fx:id="precedent" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#ACCEUIL">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/maison.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ListView fx:id="vuepiles" layoutX="493.0" layoutY="172.0" prefHeight="200.0" prefWidth="232.0" />
+      <HBox layoutX="493.0" layoutY="136.0" prefHeight="36.0" prefWidth="232.0">
+         <children>
+            <TextField fx:id="recherche" prefHeight="25.0" prefWidth="245.0" />
+         </children>
+      </HBox>
+      <Label layoutX="493.0" layoutY="113.0" text="Recherche de la pile : " />
+      <DialogPane fx:id="dialog1" layoutX="198.0" layoutY="200.0" prefHeight="102.0" prefWidth="342.0" style="-fx-background-color: rgba(175,171,171,0.51);">
+         <opaqueInsets>
+            <Insets top="14.0" />
+         </opaqueInsets>
+      </DialogPane>
+      <Label fx:id="dialog" layoutX="206.0" layoutY="198.0" text="Le fichier piles.json est malformé.">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="validation" layoutX="454.0" layoutY="224.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #00DA00;" text="D'accord !">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
